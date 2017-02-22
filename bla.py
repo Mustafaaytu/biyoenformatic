@@ -1,5 +1,27 @@
 class DNA:
 		
+	def __init__(self, name,ds,seq,df,type_mod,description):
+		self.NAME	=name
+		self.DS		=ds
+		self.SEQ	=seq
+		self.DF		=df
+		self.TYPE_MOD	=type_mod
+		self.DESCRIPTION=description
+		
+		
+	def goster(self):
+		length=len(self.SEQ)
+		dna={
+		  'name'        : self.NAME,
+		   'DS'         : self.DS,
+		   'seq'        : self.SEQ,
+		   'DF'         : self.DF,
+		    'len'       : length,
+		   'type'       : self.TYPE_MOD,
+		   'description': self.DESCRIPTION
+		}
+		return dna	
+	
 
 	def olustur():
 		dna={
@@ -34,9 +56,11 @@ class DNA:
 		dna['leg']=length
 		dna['description']=description
 		print(dna)	
-d= DNA
-d.olustur()
-dna=d.duzenle()
+
+#d.olustur()
+
+#d=DNA("DNA",5,"atgatgat",3,"DNA","First DNA")
+
 
 	 
        
