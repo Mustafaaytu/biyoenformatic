@@ -9,53 +9,85 @@ class DNA:
 		self.DESCRIPTION=description
 		
 		
-	def goster(self):
+	def olustur(self):
 		length=len(self.SEQ)
+		Name  		= self.NAME
+		DS		= self.DS
+		Seg		= self.SEQ
+		DF		= self.DF
+		Len		= length
+		Type		= self.TYPE_MOD
+		Description	= self.DESCRIPTION
+		dna=[Name, DS,Seg,DF,Len,Type,Description]
+		"""
 		dna={
 		  'name'        : self.NAME,
 		   'DS'         : self.DS,
 		   'seq'        : self.SEQ,
-		   'DF'         : self.DF,
+		   'DF'         : self.DF,			Not useful
 		    'len'       : length,
 		   'type'       : self.TYPE_MOD,
 		   'description': self.DESCRIPTION
 		}
+		"""
 		return dna	
 	
 
-	def olustur():
-		dna={
-		  'name'        : '',
-		   'DS'         : '5',
-		   'seq'        : '' ,
-		   'DF'         : '3',
-		    'len'       : '0',
-		   'type'       : 'DNA',
-		   'description':''
-		}
-		
-		print(dna)
 
-	def duzenle():
-		name		=input("Enter the name:")
-		seq 		=input("Enter the seq:")	
-		length		=len(seq)
-		description	=input("Enter the description:")
+	def duzenle(self):
+		self.NAME		=input("Enter the name:")
+		self.SEQ		=input("Enter the seq:")	
+		length			=len(self.SEQ)
+		self.DESCRIPTION	=input("Enter the description:")
 		
+		Name  		= self.NAME
+		DS		= self.DS
+		Seg		= self.SEQ
+		DF		= self.DF
+		Len		= length
+		Type		= self.TYPE_MOD
+		Description	= self.DESCRIPTION
+		dna=[Name, DS,Seg,DF,Len,Type,Description]
+		"""
+		dna=[]
 		dna={
-		  'name'        : '',
-		   'DS'         : '5',
-		   'seq'        : '' ,
-		   'DF'         : '3',
-		    'len'       : '0',
-		   'type'       : 'DNA',
-		   'description':''
+		   'name'       : self.NAME,
+		   'DS'         : self.DS,
+		   'seq'        : self.SEQ,
+		   'DF'         : self.DF,
+		   'len'        : length,
+		   'type'       : self.TYPE_MOD,
+		   'description': self.DESCRIPTION
 		}
 		dna['name']=name
 		dna['seq']=seq
-		dna['leg']=length
+		dna['len']=length
 		dna['description']=description
-		print(dna)	
+		"""
+		return dna
+
+	def complement(self):
+		stringOfSEQ	=self.SEQ
+		i=0
+		dizi=[]
+		for strings in stringOfSEQ:
+			
+			if(strings == 'a' or strings == 'A'):	
+				dizi.append('t')
+			elif(strings == 't' or strings == 'T'):
+				dizi.append('a')
+			elif(strings == 'c' or strings == 'C'):
+				dizi.append('g')
+			elif(strings == 'g' or strings == 'G'):
+				dizi.append('c')
+			else:	
+				dizi.append('x')
+			
+			i=i+1
+		self.SEQ="".join(str(x) for x in dizi)
+		
+		return self.SEQ
+		
 
 #d.olustur()
 
